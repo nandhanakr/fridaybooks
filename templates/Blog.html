@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FridayBooks</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <a href="#">Sign in</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="offcanvas__top__hover">
+                <span>Usd <i class="arrow_carrot-down"></i></span>
+                <ul>
+                    <li>USD</li>
+                    <li>EUR</li>
+                    <li>USD</li>
+                </ul>
+            </div>
+        </div>
+        <div class="offcanvas__nav__option">
+            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+            <a href="#"><img src="img/icon/heart.png" alt=""></a>
+            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price">$0.00</div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text">
+            <p>Free shipping, 30-day return or refund guarantee.</p>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left">
+                            <p>Free shipping, 10-day return or refund guarantee.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+                            <div class="header__top__links">
+                                {% if request.session.Name %}
+                      <li><a href="{% url 'Userlogout' %}"  >Welcome {{request.session.Name}}/ Logout</a></li>
+                      {% else %}
+                      <li><a href="{% url 'signup_page' %}" >Sign in</a></li>
+                      {% endif %}
+
+
+
+                            </div>
+<!--                            <div class="header__top__hover">-->
+<!--                                <span>Usd <i class="arrow_carrot-down"></i></span>-->
+<!--                                <ul>-->
+<!--                                    <li>USD</li>-->
+<!--                                    <li>EUR</li>-->
+<!--                                    <li>USD</li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif;
+                            font-weight: 600; "> Fridaybooks</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li><a href="{% url 'homepage' %}">Home</a></li>
+
+                            <li><a href="#">Shop</a>
+                                <ul class="dropdown">
+                          {% for i in cat %}
+                          <li><a href="{% url 'product_page'  cname=i.CName %}" class="item-anchor">{{i.CName}}</a></li>
+                          {% endfor %}
+                          </ul>
+                            </li>
+
+                            <li><a href="{% url 'blogpage' %}">Blog</a></li>
+                            <li><a href="{% url 'aboutpage' %}">About Us</a></li>
+                            <li><a href="{% url 'contactpage' %}">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <a href="#" class="search-switch"><img src="{% static 'home/img/icon/search.png' %}" alt=""></a>
+<!--                        <a href="#"><img src="{% static 'home/img/icon/heart.png' %}" alt=""></a>-->
+                        <a href="{% url 'cartpage' %}"><img src="{% static 'home/img/icon/cart.png' %}" alt=""> <span></span></a>
+
+                    </div>
+                </div>
+            </div>
+<!--            <div class="canvas__open"><i class="fa fa-bars"></i></div>-->
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+<!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Blog</h4>
+                        <div class="breadcrumb__links">
+                            <a href="./index.html">Home</a>
+                            <span>Blog</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+     <section class="about spad">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="about__item">
+                        <img src="{% static 'home/img/blog5.jpg' %}" alt="" style="width:300px; height:200px"><br><br>
+                        <h4 class="hdstyling" style="color:brown; font-family:Lorem ipsum dolor sit amet">SELF HELP & PERSONAL DEVELOPMENT</h4>
+                        <p> What is self? How is it comprehended? What makes the "self" conscious?
+                            Everyone goes through ups and downs in life and we all have different ways of dealing with this.
+                            Reading self-help & personal development books are often the perfect way to get motivated for many people. When you are feeling down, there are many benefits of reading books
+                            like these that not only motivate you but can also make you a better person:</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="about__item">
+                        <img src="{% static 'home/img/blog7.jpeg' %}" alt="" style="width:300px; height:200px"><br><br>
+                        <h4 class="hdstyling" style="color:brown; font-family:Lorem ipsum dolor sit amet">SUPERHEROS</h4>
+                        <p>Are you tired of reading boring tales and want to get rid of lacklustre characters?
+                            we have the solution for you to enter the world of action and thriller,
+                            start reading or watching Superhero comics. Superhero comics is a captivating form of art,
+                            that evolved into a global cultural phenomenon to captivate readers of all ages.
+                            It encompasses of most distinguished characters and fascinating narratives. </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="about__item">
+                        <img src="{% static 'home/img/blog2.jpg' %}" alt="" style="width:300px; height:200px"><br><br>
+                        <h4 class="hdstyling" style="color:brown; font-family:Lorem ipsum dolor sit amet">MYSTERY & THRILLER</h4>
+                        <p>Are you highly fascinated with crime and mystery novels? People never underestimate the
+                            reasons for embracing the clearness of thriller and mystery. Crime fiction has been heavily
+                            popular among people since the 1800s. The crime genre is one of the most evocative and engrossing
+                            for readers when they find themselves solving a crime. The story
+                            generally needs a protagonist a detective or even a private investigator,
+                            who is highly determined to solve the crime and increases the connectivity of the reader for a long period.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="about__item">
+                        <img src="{% static 'home/img/blog4.jpg' %}" alt="" style="width:300px; height:200px"><br><br>
+                        <h4 class="hdstyling" style="color:brown; font-family:Lorem ipsum dolor sit amet">ROMANCE</h4>
+                        <p>Readers have their own choices and interests to choose the right novel for them.
+                            They are blessed with different types of genres available for them to read.
+                            Among those fabulous genres, romantic fiction is one of the best romance novels to read and readers are highly influenced by romantic fiction.
+                            Romantic novels are from those categories where most people seek love, affection, twists, emotions etc. </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="about__item">
+                        <img src="{% static 'home/img/blog1.jpg' %}" alt="" style="width:300px; height:200px"><br><br>
+                        <h4 class="hdstyling" style="color:brown; font-family:Lorem ipsum dolor sit amet">MYTHOLOGY BOOKS</h4>
+                        <p>India is quite rich in diversity and culture where virtues and knowledge are highly
+                            regarded in ancient India. The great rishis and munis have a deeper
+                            influence on the people as they hold the knowledge as sacred and divine.
+                            Therefore, one must respect it all the time. In ancient days every subject and academic was taught
+                            by the holy gurus which were known as Gurukuls.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="about__item">
+                        <img src="{% static 'home/img/blog3.jpg' %}" alt="" style="width:300px; height:200px"><br><br>
+                        <h4 class="hdstyling" style="color:brown; font-family:Lorem ipsum dolor sit amet">CLASSIC FICTIONS</h4>
+                        <p>We all want to fall into the world of literature to gain something insightful
+                            and desirable viewpoints. You will allure the con- nection between the book
+                            concept and the author's viewpoints. The characters, dialogues, facts, subject
+                            etc, everything will connect you with a depth understanding of every single keyword in paragraph.
+                            The countless and ageless themes of classic novels redesign their varieties in several
+                            different ways to speak about the most desirable words. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif;
+                            font-weight: 600; color: white;"> Fridaybooks</h2>
+                        </div>
+                        <p>We've designed our online platform with you in mind. It's intuitive, easy to navigate, and provides a seamless shopping experience.</p>
+                        <a href="#"><img src="{% static 'home/img/payment.png' %}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Company</h6>
+                        <ul>
+
+                            <li><a href="{% url 'blogpage' %}">Blog</a></li>
+                            <li><a href="{% url 'aboutpage' %}">Who are we</a></li>
+                            <li><a href="{% url 'aboutpage' %}">What Drives Us</a></li>
+                            <li><a href="{% url 'aboutpage' %}">Why Choose Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Help & Support</h6>
+                        <ul>
+                            <li><a href="{% url 'aboutpage' %}">About Us</a></li>
+                            <li><a href="{% url 'contactpage' %}">Contact Us</a></li>
+                            <li><a href="{% url 'termspage' %}">Terms of Use</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>NewLetter</h6>
+                        <div class="footer__newslatter">
+                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+
+                            <form action="#">
+                                <input type="text" placeholder="Your Email">
+                                <button type="submit"><span class="icon_mail_alt"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer__copyright__text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>
+                            All rights reserved
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+    <!-- Js Plugins -->
+    <script src="{% static 'home/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'home/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'home/js/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'home/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'home/js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'home/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'home/js/mixitup.min.js' %}"></script>
+    <script src="{% static 'home/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'home/js/main.js' %}"></script>
+</body>
+
+</html>

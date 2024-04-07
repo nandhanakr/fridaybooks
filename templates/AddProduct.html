@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends 'Index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JioMart</title>
+</head>
+<body>
+<form  method ="post" action="{% url 'product_save' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+<div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Products</h4>
+                  <form class="forms-sample">
+                      <div class="form-group">
+                          <select class="form-control" name="cname">
+                              <option>Select Item</option>
+                              {% for i in cat %}
+                              <option>{{i.CName}}</option>
+                              {% endfor %}
+                          </select>
+                      </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Product Name</label>
+                      <input type="text" class="form-control"  id="exampleInputName1" placeholder="Product Name" name="pname">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Author Name</label>
+                      <input type="text" class="form-control"  placeholder="Author Name" name="auname">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleTextarea1">Description</label>
+                      <textarea class="form-control"  id="exampleTextarea1" rows="4" name="des"></textarea>
+                    </div>
+                      <div class="form-group">
+                      <label for="exampleInputName1">Price</label>
+                      <input type="text" class="form-control"  id="exampleInputName1" placeholder="Price" name="price">
+                    </div>
+
+                    <div class="form-group">
+                      <label>File upload</label>
+                      <input type="file" name="img" >
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+</form>
+</body>
+</html>
+{% endblock %}
