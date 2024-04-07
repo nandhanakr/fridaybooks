@@ -24,5 +24,4 @@ With the integration of Instamojo API, simplified the checkout process, allowing
 The importance of effective communication in ecommerce. That's why incorporated SMTP for email configuration, ensuring reliable and timely notifications for order confirmations, shipment updates and more.
 
 🐋 Docker Containerization : 
-
 Leveraging Docker, I containerized the application, encapsulating it into lightweight, portable containers. This ensures consistency across different environments and simplifies the deployment process. And containers provide high-level isolation, enhancing efficiency and resource utilization, optimizing performance.
