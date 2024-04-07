@@ -1,4 +1,4 @@
-#fridaybooks
+Fridaybooks
 #Onlinebookstore #ecommerce project
 
 Just wrapped up an exhilarating journey developing an e-commerce platform using Python and Django.
