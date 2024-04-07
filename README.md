@@ -1,5 +1,5 @@
-# fridaybooks
-Onlinebookstore ecommerce project
+#fridaybooks
+#Onlinebookstore #ecommerce project
 
 Just wrapped up an exhilarating journey developing an e-commerce platform using Python and Django.
 
@@ -8,7 +8,7 @@ In this project, I leveraged the power of Python's versatility and Django's robu
 
 Here are some highlights of the project:
 
-💻 Frontend Technologies : 
+🖼️ Frontend Technologies : 
 Utilizing HTML, CSS, Bootstrap, and JavaScript, crafted a visually stunning and user-friendly interface that ensures a seamless browsing and shopping experience.
 
 💻 Backend Technologies : 
